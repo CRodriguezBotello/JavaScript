@@ -95,35 +95,28 @@ const futbolistas = [
     }
 ];
 
-goles();
-asistencias();
-tarjetasAmarillas();
-promedioGoles();
 function goles() {
+    document.write("JUGADORES CON MAS DE 20 GOLES:<br/>");
     let goles=0;
     futbolistas.forEach(jugador => {
         if (jugador.goles>20) {
-            document.write(`${jugador.nombre} tiene mas de 20 goles<br/><br/>`);
+            document.write(`${jugador.nombre} tiene mas de 20 goles<br/>`);
         }
         goles+=jugador.goles;
     });
 }
 
-function asistencias() {
-    let aux=[];
+function ordenarAsistencias() {
 
+    console.log("ORDENAR POR ASISTENCIAS:");
     futbolistas.sort((a,b)=>b.asistencias - a.asistencias);
-    // for (let i = 0; i < futbolistas.length; i++) {
-    //     if(futbolistas[i].asistencias < futbolistas[i+1].asistencias){
-    //         aux[0]=futbolistas[i].asistencias;
-    //         futbolistas[i].asistencias=futbolistas[i+1].asistencias;
-    //         futbolistas[i+1].asistencias=aux[0];
-    //     }
-    // }
     console.log(futbolistas);
+
 }
 
 function tarjetasAmarillas() {
+
+    document.write("<br/><br/>TARJETAS AMARILLAS EN CADA EQUIPO:<br/>");
     let e1=0;
     let e2=0;
     let e3=0;
@@ -162,23 +155,74 @@ function tarjetasAmarillas() {
         }
     });
 
-    document.write(`Inter Miami tiene ${e1} asistencias en total<br/><br/>`);
-    document.write(`Al Nassr tiene ${e2} asistencias en total<br/><br/>`);
-    document.write(`Manchester City tiene ${e3} asistencias en total<br/><br/>`);
-    document.write(`Liverpool tiene ${e4} asistencias en total<br/><br/>`);
-    document.write(`Real Madrid tiene ${e5} asistencias en total<br/><br/>`);
-    document.write(`Paris Saint-Germain tiene ${e6} asistencias en total<br/><br/>`);
-    document.write(`Al-Hilal tiene ${e7} asistencias en total<br/><br/>`);
+    document.write(`Inter Miami tiene ${e1} asistencias en total<br/>`);
+    document.write(`Al Nassr tiene ${e2} asistencias en total<br/>`);
+    document.write(`Manchester City tiene ${e3} asistencias en total<br/>`);
+    document.write(`Liverpool tiene ${e4} asistencias en total<br/>`);
+    document.write(`Real Madrid tiene ${e5} asistencias en total<br/>`);
+    document.write(`Paris Saint-Germain tiene ${e6} asistencias en total<br/>`);
+    document.write(`Al-Hilal tiene ${e7} asistencias en total<br/>`);
 
 }
 
 function promedioGoles() {
+
+    document.write("<br/><br/>JUGADOR CON MAYOR PROMEDIO DE GOLES:<br/>");
     let media=0;
     futbolistas.forEach(jugador => {
         media=jugador.goles/jugador.partidosJugados;
 
-        document.write(`El jugador ${jugador.nombre} tiene un promedio de ${media} goles por partido`);
+        document.write(`El jugador ${jugador.nombre} tiene un promedio de ${media} goles por partido<br/>`);
         
     });
     
 }
+
+function masAsistencias() {
+    
+    document.write("<br/><br/>JUGADOR CON MAS ASISTENCIAS:<br/>");
+    let maxAsistencias= futbolistas.reduce((max, jugador) =>{
+        return (jugador.asistencias >max.asistencias) ? jugador : max;
+    });
+
+    document.write(`El jugador con mas asistencias es ${maxAsistencias.nombre}, con un total de ${maxAsistencias.asistencias} asistencias`);
+}
+
+function listarPosicion() {
+
+    const posiciones= {
+        portero:[],
+        defensa:[],
+        delantero:[],
+        mediocampista:[]
+    };
+    futbolistas.forEach(jugador => {
+        if (jugador.posicion === "Portero") {
+            posiciones.portero.push(jugador.nombre);
+        }else if (jugador.posicion === "Defensa") {
+            posiciones.defensa.push(jugador.nombre);
+        } else if (jugador.posicion === "Delantero") {
+            posiciones.delantero.push(jugador.nombre);
+        } else {
+            posiciones.mediocampista.push(jugador.nombre);
+        }
+    });
+    
+    console.log("PORTEROS:");
+    console.log(posiciones.portero);
+    console.log("DEFENSA:");
+    console.log(posiciones.defensa);
+    console.log("DELANTERO:");
+    console.log(posiciones.delantero);
+    console.log("MEDIOCAMPISTA:");
+    console.log(posiciones.mediocampista);
+    
+}
+
+
+goles();
+ordenarAsistencias();
+tarjetasAmarillas();
+promedioGoles();
+masAsistencias();
+listarPosicion();
