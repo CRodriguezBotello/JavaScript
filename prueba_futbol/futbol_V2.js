@@ -1,55 +1,3 @@
-Ir al contenido principal
-Google ClassroomClassroom
-24-25 DWENC2DAW
-Inicio
-Calendar
-Cursos en los que te has inscrito
-Tareas pendientes
-2
-24-25 2DAW DWES (Servidor)
-2DAW
-2
-24-25 2DAW DIW
-2DAW
-2
-24-25 2DAW Despliegue de Aplicaciones Web (DEAP)
-2DAW
-2
-2425 EIE daw MI
-2
-24-25 2DAW Tutoría
-2DAW
-2
-24-25 DWENC
-2DAW
-2
-24-25 DIW
-2DAW
-2
-23-24 1DAW BBDD
-1DAW
-2
-22-23 1DAW LM
-1DAW
-2
-23-24 1DAW Tutoría (TUT)
-TUT
-Clases archivadas
-Ajustes
-Detalles del material
-Ejercicios extra Arrays
-Alberto Dominguez
-•
-30 oct (Última modificación: 31 oct)
-Ejercicios sobre arrays (listas dentro de objetos).
-Solución (scriptResuelto.js)
-script.js
-JavaScript
-scriptResuelto.js
-JavaScript
-Comentarios de la clase
-Añade un comentario de clase…
-
 /**********************************************************************************************
 *             EJERCICIOS EXTRAS PARA PRACTICAR EL ACCESO A OBJETOS DENTRO DE UN ARRAY         *                                   
 **********************************************************************************************/
@@ -237,6 +185,3 @@ function act5(){
         }
     }
 }
-
-scriptResuelto.js
-Mostrando script.js.
